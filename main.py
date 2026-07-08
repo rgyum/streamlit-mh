@@ -65,7 +65,7 @@ if selected_day == '1일차 : 7월 6일(월)':
             st.write(random.choice(luck))
 
         st.write("---")
-        st.image('images/그림1.png')
+        #st.image('images/그림1.png')
         st.video('https://www.youtube.com/watch?v=xxxx')
 
         st.write("---")
