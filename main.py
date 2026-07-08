@@ -1,4 +1,8 @@
 import streamlit as st
+import re
+from streamlit_mic_recorder import speech_to_text
+from gtts import gTTS
+from io import BytesIO
 
 st.set_page_config(page_title='streamlit 실습', page_icon='👻', layout='wide')
 
@@ -252,10 +256,7 @@ if selected_day == '1일차 : 7월 6일(월)':
 elif selected_day == '2일차 : 7월 7일(화)':
     with tab_practice:
         st.header('2일차 실습예제')
-        import re
-        from streamlit_mic_recorder import speech_to_text
-        from gtts import gTTS
-        from io import BytesIO
+        
 
         def classify_bmi(bmi: float) -> tuple[str, str, str]:
             """대한비만학회(아시아-태평양) 기준 BMI 분류
