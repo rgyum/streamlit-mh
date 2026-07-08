@@ -4,9 +4,9 @@ from streamlit_mic_recorder import speech_to_text
 from gtts import gTTS
 from io import BytesIO
 
-st.set_page_config(page_title='streamlit 실습', page_icon='👻', layout='wide')
+st.set_page_config(page_title='Streamlt 실습', page_icon='💻', layout='wide')
 
-st.sidebar.title('👻강의 일정')
+st.sidebar.title('📆강의 일정')
 st.sidebar.caption('날짜를 클릭하면 그날의 실습/과제 화면으로 이동합니다.')
 
 selected_day = st.sidebar.radio(
@@ -23,7 +23,7 @@ selected_day = st.sidebar.radio(
 st.title(selected_day)
 st.divider()
 
-tab_practice, tab_assignment1, tab_assignment2 = st.tabs(['실습', '과제1', '과제2'])
+tab_practice, tab_assignmemt1, tab_assignment2 = st.tabs(['실습', '과제1', '과제2'])
 
 if selected_day == '1일차 : 7월 6일(월)':
     with tab_practice:
@@ -147,14 +147,13 @@ if selected_day == '1일차 : 7월 6일(월)':
         st.write("---")
         if 'count' not in st.session_state:
             st.session_state.count = 0
-
+        
         if st.button('증가'):
-                st.session_state.count += 1
-
+            st.session_state.count += 1
+        
         st.write(st.session_state.count)
 
-
-    with tab_assignment1:
+    with tab_assignmemt1:
         st.header('1일차 실습과제1')
         import random
  
@@ -168,8 +167,6 @@ if selected_day == '1일차 : 7월 6일(월)':
             ("실패는 성공으로 가는 과정일 뿐이다.", "토마스 에디슨"),
             ("배움에 있어 늦은 때는 없다.", "작자 미상"),
             ("작은 습관이 큰 변화를 만든다.", "제임스 클리어"),
-            ("너 자신을 알라.", "아리스토텔레스"),
-            ("안정우 바보", "류규민"),
         ]
         
         if "quote_index" not in st.session_state:
@@ -182,9 +179,9 @@ if selected_day == '1일차 : 7월 6일(월)':
         
         with col_profile:
             st.header("내 프로필")
-            st.subheader("류규민")
-            st.write("고등학교 1학년, 미래의 정복자")
-            st.write("관심사: 게임, 음악, 안정우, 운동")
+            st.subheader("김수연")
+            st.write("고등학교 2학년, 미래의 개발자")
+            st.write("관심사: 게임, 음악, 파이썬, 디저트")
             st.info("위 이름과 소개, 관심사를 자기 것으로 바꿔보세요.")
         
         with col_quote:
@@ -196,7 +193,7 @@ if selected_day == '1일차 : 7월 6일(월)':
             if st.button("다른 명언 보기"):
                 st.session_state.quote_index = random.randrange(len(quotes))
                 st.rerun()
-    
+
     with tab_assignment2:
         st.header('1일차 실습과제2')
         st.set_page_config(page_title="BMI 계산기", page_icon="⚖️", layout="wide")
@@ -394,9 +391,9 @@ elif selected_day == '2일차 : 7월 7일(화)':
                 st.audio(audio, format="audio/mp3")
                 st.caption("▶️ 재생 버튼을 눌러 결과를 들어보세요.")
 
-    with tab_assignment1:
+    with tab_assignmemt1:
         st.header('2일차 실습과제1')
-    
+
     with tab_assignment2:
         st.header('2일차 실습과제2')
 
@@ -404,9 +401,9 @@ elif selected_day == '3일차 : 7월 8일(수)':
     with tab_practice:
         st.header('3일차 실습예제')
 
-    with tab_assignment1:
+    with tab_assignmemt1:
         st.header('3일차 실습과제1')
-    
+
     with tab_assignment2:
         st.header('3일차 실습과제2')
 
@@ -414,18 +411,18 @@ elif selected_day == '4일차 : 7월 9일(목)':
     with tab_practice:
         st.header('4일차 실습예제')
 
-    with tab_assignment1:
+    with tab_assignmemt1:
         st.header('4일차 실습과제1')
-    
+
     with tab_assignment2:
         st.header('4일차 실습과제2')
-       
+
 elif selected_day == '5일차 : 7월 10일(금)':
     with tab_practice:
         st.header('5일차 실습예제')
 
-    with tab_assignment1:
+    with tab_assignmemt1:
         st.header('5일차 실습과제1')
-    
+
     with tab_assignment2:
-        st.header('5일차 실습과제2')        
+        st.header('5일차 실습과제2')
